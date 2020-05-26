@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+}
+
+body {
+    background: url("https://coverfiles.alphacoders.com/107/107585.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.warning {
+    color:#C9EDDC;
+    margin: 10px;
+    font-size: medium;
+    font-style: italic;
+}
+
+.trigger{
+    background-color: red;
+    width: 400px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.validate{
+    background-color: #F35050;
+}
+
+.response {
+    padding: 5px;
+    width: 40px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    padding: 2px;
+    text-align: center;
+    background-color: white;
+}
+
+.hide{
+    display: none;
+}
+.error{
+    position: absolute;
+    margin-left: 250px;
+    margin-top: -10px;
+    color:white;
+    background-color: #F35050;
+}
+
+.output{
+    width: 400px;
+    height: 400px;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150616110028-silhouette-man-foggy-woods.jpgF);
+}
+.result {
+    padding: 100px;
+    font-size: x-large;
+    color: white;
+    -webkit-text-stroke: 1px red;
+    font-weight: bold;
+    text-align: unset;
+}
+
+.question-cell {
+    width: 300px;
+    padding: 4px;
+    background-color: #4CAF50;
+    height: 27px;
+    color: ivory;
+    text-align: center;
+}
+
+.form {
+    margin-top: 30px;
+    margin-left: 80px;
+}
+
+.split-left {
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    left: 0;
+}
+
+.split-right {
+    height: 100%;
+    width: 55%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    right: 0;
+}
+
+
+.info {
+    color: #9CFFFA;
+    font-family: 'Segoe UI';
+    margin-left: 70px;
+    margin-top: 20px;
+    text-align:justify ;
+}
+
+.heading {
+    color: #ACF39D;
+    font-size: 250%;
+    margin-left:70px;
+    margin-top: 70px;
+}
+
+table {
+    margin-top: 19%;
+    z-index: 10;
+}
+
+.card {
+    position: absolute;
+    height: 85%;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.34);
+    z-index: -5;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.inputs {
+    width: 35%;
+    box-sizing: border-box;
+    padding: 12px 17px;
+    border: 0px solid;
+    border-radius: 20px;
+    flex: 0 0 220px;
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.labels {
+    text-align: center;
+    padding: 12px 17px;
+    border: 0px solid;
+    border-radius: 20px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.34);
+
+    font-size: 140%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    width: 420px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+::placeholder {
+    color: black;
+    
+    text-align: center;
+}
+
+.btn {
+    font-size: 110%;
+    background-color: #4CAF50;
+    color: white;
+    box-sizing: border-box;
+    border: 0px solid;
+    border-radius: 20px;
+    padding: 10px 10px;
+    margin: 5px;
+}
+
+.abit {
+    font-size: 80%;
+    font-weight: 600;
+}

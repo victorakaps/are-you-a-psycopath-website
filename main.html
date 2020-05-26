@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARE YOU A PSYCHOPATH?</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana;
+        }
+
+        body {
+            background: url("https://coverfiles.alphacoders.com/107/107585.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .warning {
+            color: #C9EDDC;
+            margin: 10px;
+            font-size: medium;
+            font-style: italic;
+        }
+
+        .trigger {
+            background-color: red;
+            width: 400px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 120%;
+        }
+
+        .validate {
+            background-color: #F35050;
+        }
+
+        .response {
+            padding: 5px;
+            width: 40px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            padding: 2px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .error {
+            position: absolute;
+            margin-left: 250px;
+            margin-top: -10px;
+            color: white;
+            background-color: #F35050;
+        }
+
+        .output {
+            width: 400px;
+            height: 400px;
+            margin-top: 20%;
+            margin-bottom: 20%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url(https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150616110028-silhouette-man-foggy-woods.jpgF);
+        }
+
+        .result {
+            padding: 100px;
+            font-size: x-large;
+            color: white;
+            -webkit-text-stroke: 1px red;
+            font-weight: bold;
+            text-align: unset;
+        }
+
+        .question-cell {
+            width: 300px;
+            padding: 4px;
+            background-color: #4CAF50;
+            height: 27px;
+            color: ivory;
+            text-align: center;
+        }
+
+        .form {
+            margin-top: 30px;
+            margin-left: 80px;
+        }
+
+        .split-left {
+            height: 100%;
+            width: 40%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            left: 0;
+        }
+
+        .split-right {
+            height: 100%;
+            width: 55%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            right: 0;
+        }
+
+
+        .info {
+            color: #9CFFFA;
+            font-family: 'Segoe UI';
+            margin-left: 70px;
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        .heading {
+            color: #ACF39D;
+            font-size: 250%;
+            margin-left: 70px;
+            margin-top: 70px;
+        }
+
+        table {
+            margin-top: 19%;
+            z-index: 10;
+        }
+
+        .card {
+            position: absolute;
+            height: 85%;
+            width: 70%;
+            background-color: rgba(0, 0, 0, 0.34);
+            z-index: -5;
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+
+        .inputs {
+            width: 35%;
+            box-sizing: border-box;
+            padding: 12px 17px;
+            border: 0px solid;
+            border-radius: 20px;
+            flex: 0 0 220px;
+            margin-left: 30px;
+            font-size: 15px;
+        }
+
+        .labels {
+            text-align: center;
+            padding: 12px 17px;
+            border: 0px solid;
+            border-radius: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.34);
+
+            font-size: 140%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            width: 420px;
+            line-height: 26px;
+            margin-bottom: 10px;
+        }
+
+        ::placeholder {
+            color: black;
+
+            text-align: center;
+        }
+
+        .btn {
+            font-size: 110%;
+            background-color: #4CAF50;
+            color: white;
+            box-sizing: border-box;
+            border: 0px solid;
+            border-radius: 20px;
+            padding: 10px 10px;
+            margin: 5px;
+        }
+
+        .abit {
+            font-size: 80%;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<section class="split-left">
+    <h1 class="heading">Are You a Psycopath?</h1>
+    <p class="info">This quiz is designed to help give you some idea about whether or not you may be a psychopath or
+        sociopath, or
+        have
+        psychopathic tendencies. This quiz is not meant to diagnose psychopathy or tell you definitively whether or not
+        you’re a psychopath. But it will give you a pretty good idea, based upon the research. For each item, indicate
+        how
+        much you agree or disagree with the statement. Take your time and answer truthfully for the most accurate
+        results.
+    </p>
+    <form class="form" name="forma">
+        <label class="labels">YOUR NAME<input type="text" placeholder="JOHN LENON" class="inputs" id="Name" name="Name"
+                value="" onblur="validatename();" required></label> <span class="error1 error hide"></span>
+        <br>
+        <label class="labels">YOUR EMAIL<input type="email" class="inputs" id="email" placeholder="example@xyz.com"
+                name="email" value="" onblur="validateemail();" required></label> <span
+            class="error2 error hide"></span>
+        <br>
+        <label class="labels">YOUR D.O.B.<input id="date" type="date" class="inputs"
+                style="color: #76777d;text-align: center;"></label>
+        <br>
+        <label class="labels" for="gender">YOUR GENDER<select name="GENDER" id="gender" class="inputs"
+                style="color: #76777d;text-align: center;">
+                <option>Prefer Not To Say</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Non-Binary</option>
+            </select></label>
+    </form>
+</section>
+<section class="split-right">
+    <div class="card"></div>
+    <form name="formb" id="formb">
+        <center>
+            <table padding="2" class="table">
+                <tr>
+                    <th style="text-align: center;" class="question-cell">QUESTIONS</th>
+                    <th class="response">YES</th>
+                    <th class="response abit">A BIT</th>
+                    <th class="response">NO</th>
+                </tr>
+                <tr>
+                    <td class="question-cell">I am impulsive by nature</td>
+                    <td><input type="radio" id="q1" value="2" name="q1"></td>
+                    <td><input type="radio" id="q1" value="1" name="q1"></td>
+                    <td><input type="radio" id="q1" value="0" name="q1"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I don’t want share</td>
+                    <td><input type="radio" id="q2" value="2" name="q2"></td>
+                    <td><input type="radio" id="q2" value="1" name="q2"></td>
+                    <td><input type="radio" id="q2" value="0" name="q2"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I am an attention seeker</td>
+                    <td><input type="radio" id="q3" value="2" name="q3"></td>
+                    <td><input type="radio" id="q3" value="1" name="q3"></td>
+                    <td><input type="radio" id="q3" value="0" name="q3"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I don't do long-term relationships</td>
+                    <td><input type="radio" id="q5" value="2" name="q4"></td>
+                    <td><input type="radio" id="q4" value="1" name="q4"></td>
+                    <td><input type="radio" id="q4" value="0" name="q4"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I don’t like held responsible</td>
+                    <td><input type="radio" id="q5" value="2" name="q5"></td>
+                    <td><input type="radio" id="q5" value="1" name="q5"></td>
+                    <td><input type="radio" id="q5" value="0" name="q5"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I am short tempered</td>
+                    <td><input type="radio" id="q6" value="2" name="q6"></td>
+                    <td><input type="radio" id="q6" value="1" name="q6"></td>
+                    <td><input type="radio" id="q6" value="0" name="q6"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I have a strong craving to win</td>
+                    <td><input type="radio" id="q7" value="2" name="q7"></td>
+                    <td><input type="radio" id="q7" value="1" name="q7"></td>
+                    <td><input type="radio" id="q7" value="0" name="q7"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I don’t feel shy in taking favors</td>
+                    <td><input type="radio" id="q8" value="2" name="q8"></td>
+                    <td><input type="radio" id="q8" value="1" name="q8"></td>
+                    <td><input type="radio" id="q8" value="0" name="q8"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I can be very engaging & charming</td>
+                    <td><input type="radio" id="q9" value="2" name="q9"></td>
+                    <td><input type="radio" id="q9" value="1" name="q9"></td>
+                    <td><input type="radio" id="q9" value="0" name="q9"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I become bore easily</td>
+                    <td><input type="radio" id="q10" value="2" name="q10"></td>
+                    <td><input type="radio" id="q10" value="1" name="q10"></td>
+                    <td><input type="radio" id="q10" value="0" name="q10"></td>
+                </tr>
+                <tr>
+                    <td class="question-cell">I think rules are meant to be broken</td>
+                    <td><input type="radio" id="q11" value="2" name="q11"></td>
+                    <td><input type="radio" id="q11" value="1" name="q11"></td>
+                    <td><input type="radio" id="q11" value="0" name="q11"></td>
+                </tr>
+            </table>
+            <p class="warning">make sure you have answered all questions</p>
+            <button class="btn" onclick="quiz()">CHECK YOUR RESULT</button>
+            <div class="output hide">
+                <p id="output" class="result"></p>
+                <button class="btn" onclick="window.location.reload()">Wanna Test Again?</button>
+            </div>
+
+        </center>
+    </form>
+
+
+</section>
+<script>var form = document.getElementById("formb");
+    function handleForm(event) {
+        event.preventDefault();
+    }
+    form.addEventListener("submit", handleForm);
+
+    function validatename() {
+        var name = document.forma.Name.value;
+        if (name == null || name == "") {
+            document.forma.Name.classList.add('validate');
+            document.querySelector('.error1').classList.toggle('hide');
+            document.querySelector('.error1').textContent = "This Field is Required";
+        } else {
+            document.querySelector('.error1').classList.toggle('hide');
+            document.forma.Name.classList.remove('validate');
+        }
+    }
+
+    function validateemail() {
+        var x = document.forma.email.value;
+        var atposition = x.indexOf("@");
+        var dotposition = x.lastIndexOf(".");
+        if (
+            atposition < 1 ||
+            dotposition < atposition + 2 ||
+            dotposition + 2 >= x.length
+        ) {
+            document.forma.email.classList.add('validate');
+            document.querySelector('.error2').classList.toggle('hide');
+            document.querySelector('.error2').textContent = "Invalid Input";
+        } else {
+            document.querySelector('.error2').classList.toggle('hide');
+            document.forma.email.classList.remove('validate');
+        }
+    }
+    function quiz() {
+        try {
+            var x = [
+                document.querySelector('input[name="q1"]:checked').value,
+                document.querySelector('input[name="q2"]:checked').value,
+                document.querySelector('input[name="q3"]:checked').value,
+                document.querySelector('input[name="q4"]:checked').value,
+                document.querySelector('input[name="q5"]:checked').value,
+                document.querySelector('input[name="q6"]:checked').value,
+                document.querySelector('input[name="q7"]:checked').value,
+                document.querySelector('input[name="q8"]:checked').value,
+                document.querySelector('input[name="q9"]:checked').value,
+                document.querySelector('input[name="q10"]:checked').value,
+                document.querySelector('input[name="q11"]:checked').value,
+            ];
+        }
+        catch (error) {
+            document.querySelector('.warning').classList.toggle('trigger');
+        }
+
+        var msg;
+        const doc = document.getElementById("output");
+        var ans = 0;
+        for (var i = 0; i < x.length; i++) {
+            ans += parseInt(x[i]);
+        }
+        var name = document.forma.Name.value.toUpperCase();
+        var per = ((ans / 22) * 100).toFixed(2);
+        var txt;
+        if (ans > 15) {
+            txt = "Strong Psychopathic Tendencies.";
+        } else if (ans > 9 && ans <= 15) {
+            txt = "Moderate To Minor Psychopathic Tendencies.";
+        } else {
+            txt = "No Psychopathic Tendencies";
+        }
+        document.querySelector('.btn').classList.toggle('hide')
+        document.querySelector('.table').classList.toggle('hide')
+        document.querySelector('.output').classList.toggle('hide')
+        document.querySelector('.warning').classList.toggle('hide')
+        msg = name + ", Your Score is " + per + "%, which means " + txt;
+        doc.textContent = msg
+        document.getElementById("formb").reset();
+    }
+
+</script>
+</body>
+
+</html>
